@@ -1,2 +1,2 @@
 # navbar-components
-different Navbar components with pure JS and SASS preprocessor 
+Resposive mobile friendly NavBar with JS SASS .
