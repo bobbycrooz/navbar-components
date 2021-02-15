@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+@mixin breakpoint($size){
+    @media  only screen and (max-width:$size){
+        @content
+    }
+}
+
+// colors variable
+$p : #464F51;
+$s : #E00000;
+$t : #EFF5F6;
+
+
+.main__five{
+    nav{
+      
+        display: flex;
+        flex-wrap: wrap;
+        padding:0 100px;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        background-color: $t;
+        box-shadow:
+        0 0 5px $p;
+
+        .logo{
+            font-size: 25px;
+            font-weight: 600;
+            color: $s;
+            letter-spacing: -1px;
+            margin-left: -50px;
+
+
+        }
+        ul.navbar_one{
+            display: flex;
+            flex: 1;
+            padding: 0 0 0 40px;
+            margin-top: 20px;
+
+           
+            
+            li {
+            list-style: none;
+            padding: 0 15px;
+                
+                a{
+                    padding: 5px;
+                    background-color: transparent;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    color: $p;
+                    font-weight: 500px;
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    &:hover{
+                        background-color: $p;
+                        color: $t;
+                        padding: 8px;
+                        transition: padding 0.4s;
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+              
+
+        }
+
+        .search_container{
+            padding:5px;
+            height: 40px;
+            display: flex;
+            background-color: $p;
+            input{
+               width: 100%;
+                height: 100%;
+                padding: 0 10px;
+                color: $t;
+                font-size: 17px;
+                border: none;
+                font-weight: 500;
+                background: none;
+                &:focus{
+                    outline: none;
+                }
+            }
+            button{
+               padding: 0 15px;
+               color: $p;
+               cursor: pointer;
+               background: $t;
+               border-radius: 3px;
+            }
+        }
+
+        .menu_icon, 
+        .search_icon,
+        .cancle_icon{
+            width: 40px;
+            text-align: center;
+            margin: 0 50px;
+            font-size: 18px;
+            color: $p;
+            cursor: pointer;
+            display: none;
+        }
+
+        .menu_icon span,  
+        .search_icon,
+        .cancle_icon{
+         
+            display: none;
+        }
+
+
+        @include breakpoint(1245px){
+            nav{
+                padding: 0 50px;
+            }
+        }
+        @include breakpoint(1140px){
+            &{
+                padding: 0;
+                .logo{
+                    flex: 2;
+                    text-align: center;
+                    margin-left: 10px;
+                   
+                }
+                ul.navbar_one{
+                   position: fixed;
+                   z-index: 99;
+                   top: 70px;
+                   width: 100%;
+                   height: 100%;
+                   left: -100%;
+                  display: inline-block;
+                   padding: 10px 50px 0 50px;
+                   text-align: center;
+                 
+                  background-color: $p;
+                    margin-top: 0px ;
+                    transition: left 0.5s ease;
+                    &.active{
+                        left: 0;
+                    }
+                    li{
+                        line-break: 40px;
+                        margin: 30px 0;
+                        a{
+                            font-size: 20px;
+                            color: $t;
+                            &:hover{
+                                color: $s;
+                            }
+                        }
+                    }
+
+                }
+                .search_container{
+                    position: absolute;
+                    top: 80px;
+                    right: 50px;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: top 0.3s ease, opacity 0.1s ease;
+                    &.active{
+                        top: 95px;
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                    &:before{
+                        position: absolute;
+                        content: "";
+                        top: -14px;
+                        right: 0;
+                        border: 10px solid transparent;
+                        border-bottom-color: $p;
+                        z-index: -1;
+                        // margin: -20px 0 0;
+
+
+                    }
+        
+                }
+
+                .menu_icon
+                {
+                    display: block;
+                }
+                .search_icon,
+                .menu_icon span{
+                    display: block;
+
+                }
+                .menu_icon span.hide,
+                .search_icon.hide{
+                    display: none;
+
+                }
+
+                .cancle_icon.show{
+                    display: block;
+                }
+            }
+        }
+
+        @include breakpoint(980px){
+            & .menu_icon,
+            .cancle_icon,
+            .search_icon{
+                margin: 0 20px;
+               
+            
+
+                
+            }
+
+            & .search_container{
+                right: 30px;
+
+            }
+        }
+
+   
+    }
+
+    .content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border: 2px solid transparent;
+        border-bottom-color: $s;
+        .tittles{
+            text-align: center;
+                font-size: 24px ;
+
+        }
+    }
+}

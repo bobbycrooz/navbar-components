@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main__five nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 100px;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background-color: #EFF5F6;
+  box-shadow: 0 0 5px #464F51;
+}
+.main__five nav .logo {
+  font-size: 25px;
+  font-weight: 600;
+  color: #E00000;
+  letter-spacing: -1px;
+  margin-left: -50px;
+}
+.main__five nav ul.navbar_one {
+  display: flex;
+  flex: 1;
+  padding: 0 0 0 40px;
+  margin-top: 20px;
+}
+.main__five nav ul.navbar_one li {
+  list-style: none;
+  padding: 0 15px;
+}
+.main__five nav ul.navbar_one li a {
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #464F51;
+  font-weight: 500px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.main__five nav ul.navbar_one li a:hover {
+  background-color: #464F51;
+  color: #EFF5F6;
+  padding: 8px;
+  transition: padding 0.4s;
+  cursor: pointer;
+}
+.main__five nav .search_container {
+  padding: 5px;
+  height: 40px;
+  display: flex;
+  background-color: #464F51;
+}
+.main__five nav .search_container input {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: #EFF5F6;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
+}
+.main__five nav .search_container input:focus {
+  outline: none;
+}
+.main__five nav .search_container button {
+  padding: 0 15px;
+  color: #464F51;
+  cursor: pointer;
+  background: #EFF5F6;
+  border-radius: 3px;
+}
+.main__five nav .menu_icon,
+.main__five nav .search_icon,
+.main__five nav .cancle_icon {
+  width: 40px;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  color: #464F51;
+  cursor: pointer;
+  display: none;
+}
+.main__five nav .menu_icon span,
+.main__five nav .search_icon,
+.main__five nav .cancle_icon {
+  display: none;
+}
+@media only screen and (max-width: 1245px) {
+  .main__five nav nav {
+    padding: 0 50px;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  .main__five nav {
+    padding: 0;
+  }
+  .main__five nav .logo {
+    flex: 2;
+    text-align: center;
+    margin-left: 10px;
+  }
+  .main__five nav ul.navbar_one {
+    position: fixed;
+    z-index: 99;
+    top: 70px;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    display: inline-block;
+    padding: 10px 50px 0 50px;
+    text-align: center;
+    background-color: #464F51;
+    margin-top: 0px;
+    transition: left 0.5s ease;
+  }
+  .main__five nav ul.navbar_one.active {
+    left: 0;
+  }
+  .main__five nav ul.navbar_one li {
+    line-break: 40px;
+    margin: 30px 0;
+  }
+  .main__five nav ul.navbar_one li a {
+    font-size: 20px;
+    color: #EFF5F6;
+  }
+  .main__five nav ul.navbar_one li a:hover {
+    color: #E00000;
+  }
+  .main__five nav .search_container {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.3s ease, opacity 0.1s ease;
+  }
+  .main__five nav .search_container.active {
+    top: 95px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .main__five nav .search_container:before {
+    position: absolute;
+    content: "";
+    top: -14px;
+    right: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #464F51;
+    z-index: -1;
+  }
+  .main__five nav .menu_icon {
+    display: block;
+  }
+  .main__five nav .search_icon,
+.main__five nav .menu_icon span {
+    display: block;
+  }
+  .main__five nav .menu_icon span.hide,
+.main__five nav .search_icon.hide {
+    display: none;
+  }
+  .main__five nav .cancle_icon.show {
+    display: block;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .main__five nav .menu_icon,
+.main__five nav .cancle_icon,
+.main__five nav .search_icon {
+    margin: 0 20px;
+  }
+  .main__five nav .search_container {
+    right: 30px;
+  }
+}
+.main__five .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid transparent;
+  border-bottom-color: #E00000;
+}
+.main__five .content .tittles {
+  text-align: center;
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=main.css.map */
